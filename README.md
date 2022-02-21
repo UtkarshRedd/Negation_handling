@@ -54,13 +54,12 @@ Synset
 It is a special sort of interface residing in the NLTK library which helps in looking up words in the WordNet lexical database. Synset instances are groupings of synonymous words that express the same concept. Using Synsets in this paper for negation handling gives a much simpler way to find relationships between different words than training complex models or using heavy duty word embeddings, which take much higher processing power and other resources. 
 
 #Results
-
-	Naïve Bayes Classifier	Logistic Regression
-BoW with Uni+Bigrams and Negation	66.90%	70.88%
-BoW with Uni+Bigrams without Negation	66.32%	70.22%
-TFIDF (Uni+Bigrams) with Negation	64.86%	70.45%
-TFIDF (Uni+Bigrams) without Negation	64.35%	70.25%
-
+| Tables                                | Naïve Bayes Classifier | Logistic Regression |
+| ------------------------------------- |:----------------------:| -------------------:|
+| BoW with Uni+Bigrams and Negation     | 66.90%                 | 70.88%              |
+| BoW with Uni+Bigrams without Negation | 66.32%                 | 70.22%              |
+| TFIDF (Uni+Bigrams) with Negation     | 64.35%                 | 70.25%              |
+| TFIDF (Uni+Bigrams) without Negation  | 64.35%                 | 70.25%              |
 
 ![image](https://user-images.githubusercontent.com/29978378/154961308-49b6df53-baa6-4ad8-bf5b-ea1737255368.png)
 
