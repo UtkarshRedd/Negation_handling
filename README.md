@@ -21,7 +21,6 @@ Output: sentence, which is a tokenized Sentence after handling negation
 7:              FOR l IN syn.lemmas():
 8:                  IF l.antonyms():
 9:                    antonyms.append(l.antonyms()[0].name())
-# If the antonym of the word ahead negation exists then pop the negation and replace the word ahead with antonym
 10:              SET max_dissimilarity TO 0     
 #If antonym does not exist then leave it alone.
 11:             FOR ant IN antonyms:
@@ -34,8 +33,6 @@ Output: sentence, which is a tokenized Sentence after handling negation
 18:              IF isinstance(word1.wup_similarity(word2), 
 float) or isinstance(word1.wup_similarity(word2), int):
 19:                   SET temp TO 1 - word1.wup_similarity(word2) 
-#Replacing with the antonym that has the maximum level of dissimilarity as per the wordnet IN nltk
-
 20:                  IF temp>max_dissimilarity:
 21:                      SET max_dissimilarity TO temp
 22:                      SET antonym_max TO ant
