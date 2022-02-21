@@ -53,5 +53,19 @@ Out of all the antonyms, one with the highest dissimilarity is considered and th
 Synset
 It is a special sort of interface residing in the NLTK library which helps in looking up words in the WordNet lexical database. Synset instances are groupings of synonymous words that express the same concept. Using Synsets in this paper for negation handling gives a much simpler way to find relationships between different words than training complex models or using heavy duty word embeddings, which take much higher processing power and other resources. 
 
+#Results
+
+	Naïve Bayes Classifier	Logistic Regression
+BoW with Uni+Bigrams and Negation	66.90%	70.88%
+BoW with Uni+Bigrams without Negation	66.32%	70.22%
+TFIDF (Uni+Bigrams) with Negation	64.86%	70.45%
+TFIDF (Uni+Bigrams) without Negation	64.35%	70.25%
+
+
+![image](https://user-images.githubusercontent.com/29978378/154961308-49b6df53-baa6-4ad8-bf5b-ea1737255368.png)
+
+![image](https://user-images.githubusercontent.com/29978378/154961335-6f7cfa8c-2448-4429-be88-ab7622a6d3e6.png)
+
+
 # Conclusion
 The quality of data is one of the most important factors in Sentiment Classification. Good Data can give good results when combined with the appropriate model. For industrial applications of Sentiment Analysis, where a quick turnaround time is required with minimum cost and maximum resource utilization, using heavy and complex algorithms often incur a lot of overhead and resources. Instead of spending time and resources on complex ML and DL algorithms which lie figuratively in the last leg of a Data Pipeline, we should focus on the first leg of the Data Pipeline which is preparing the data and increasing the quality of data. The function implemented in this paper does precisely the same and increases the data quality to an extent that the results are almost comparable to a complex algorithm but uses less resources and simpler Machine Learning models. 
