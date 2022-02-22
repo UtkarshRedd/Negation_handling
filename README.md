@@ -4,6 +4,8 @@
 The layman's notion is that the accuracy of a Sentiment Classification model is mainly dependent on the quality and functionality of the model itself. However, this is not entirely true. The quality of the data and its usability for a model is the main defining characteristic of any prediction driven task. Data Scientists all over the world spend at least 80% of their time in Data Wrangling (as said by Andrew Ng, CEO of Landing AI). Exploratory Data Analysis, Feature Extraction, removing noise, choosing the right model for the data and then making the data ready as input for the model are the most time-taking steps in any process aiming to derive insights from data. Moreover, these take place even before any Machine Learning or Deep Learning algorithms are chosen, which can get extremely complex in nature.
 The research done here, shows that after employing Negation Handline and thereby increasing the quality of data the accuracy of Sentiment Classification using simple algorithms like Logistic Regression and Naive Bayes classifier show comparable results to complex Word Embedding models.
 
+For more details kindly refer to my [Medium Article](https://utkarsh-lal.medium.com/increasing-accuracy-of-sentiment-classification-using-negation-handling-b6d2de93445e)
+
 # Methodology
 Negation Replacement Methodology
 The pseudocode of the function is as follows: -
