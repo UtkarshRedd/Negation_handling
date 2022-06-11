@@ -7,44 +7,6 @@ The research done here, shows that after employing Negation Handline and thereby
 For more details kindly refer to my [Medium Article](https://utkarsh-lal.medium.com/increasing-accuracy-of-sentiment-classification-using-negation-handling-b6d2de93445e)
 
 # Methodology
-Negation Replacement Methodology
-The pseudocode of the function is as follows: -
-
-Alogrithm: Negation Replacement Algorithm
-Input: 	sentence, which is a list of words or a	Tokenized sentence
-Output: sentence, which is a tokenized Sentence after handling negation
-
-1: FOR i IN range(len(sentence)):
-2:      IF sentence[i-1] IN ['not',"n't",'Not','NOT']:
-3:          SET antonyms TO [ ]
-4:          FOR syn IN wordnet.synsets(sentence[i]):
-5:              SET syns TO wordnet.synsets(sentence[i])
-6:              SET w1 TO syns[0].name()
-7:              FOR l IN syn.lemmas():
-8:                  IF l.antonyms():
-9:                    antonyms.append(l.antonyms()[0].name())
-10:              SET max_dissimilarity TO 0     
-#If antonym does not exist then leave it alone.
-11:             FOR ant IN antonyms:
-12:              SET syns TO wordnet.synsets(ant)
-13:              SET w2 TO syns[0].name()
-14:              SET syns TO wordnet.synsets(sentence[i])
-15:              SET w1 TO syns[0].name()
-16:              SET word1 TO wordnet.synset(w1)
-17:              SET word2 TO wordnet.synset(w2)
-18:              IF isinstance(word1.wup_similarity(word2), 
-float) or isinstance(word1.wup_similarity(word2), int):
-19:                   SET temp TO 1 - word1.wup_similarity(word2) 
-20:                  IF temp>max_dissimilarity:
-21:                      SET max_dissimilarity TO temp
-22:                      SET antonym_max TO ant
-23:                      SET sentence[i] TO antonym_max
-24:                      SET sentence[i-1] TO ''
-25:    WHILE '' IN sentence:
-26:      sentence.remove('')
-27:    RETURN sentence
-
-
 In the function, whenever a negation word (like ‘not’, “n’t”, ‘non-‘, ‘un-‘, etc) is encountered, a set of cognitive synonyms called synsets are generated for the word next to the negation. These synsets are interlinked by conceptual semantic and lexical relations to each other in a lexical database called WordNet. WordNet is a part of the NLTK python library. After the synsets are created, the method checks if an antonym of that word exists in the WordNet.
 If an antonym doesn’t exist, it implies that the word is either a verb or an entity that has no opposite word available in the WordNet. So, it is left as it is, and the context of the sentence is preserved. But if an antonym exists in the lexical database, then a list of antonyms is created. Then the dissimilarity coefficient of each of these antonyms are found using the function, wup_similarity. The dissimilarity coefficient of two words would be: - 
 dissimilarity = (1 - word1.wup_similarity(word2))
